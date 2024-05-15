@@ -14,19 +14,11 @@ class Solution:
 
 # 2
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        
-        dummy = ListNode()
-        curr = dummy
-
-        carry = 0
-        while l1 or l2 or carry:
-            val1 = l

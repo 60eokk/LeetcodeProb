@@ -14,10 +14,12 @@ class Solution:
 
 # 2
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode: # represents singly linked list
+    # Each node contains int value stored in the node + a pointer do the next node ('next'). If no next node, then 'None'
+    def __init__(self, val=0, next=None):
+        # __init__ is a constructor method for a  new instance of ListNode
+        self.val = val
+        self.next = next
 
 
 class Solution:

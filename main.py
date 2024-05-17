@@ -24,3 +24,32 @@ class ListNode: # represents singly linked list
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+
+
+
+
+# 3
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+
+
+        seen = set()
+        max_num = 0
+        i=0
+        j=0
+
+        while j < len(s):
+            if s[j] not in seen:
+                seen.add(s[j])
+                j+=1
+                max_num = max(max_num, j-i)
+            else:
+                while s[i] != s[j]:
+                    seen.remove(s[i])
+                    i+=1
+                seen.remove(s[i])
+                i+=1
+
+        return max_num
+        
+

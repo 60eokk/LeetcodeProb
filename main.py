@@ -77,3 +77,28 @@ class Solution:
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
         
+        if numRows == 1:
+            return s
+        
+        buckets : list[str] = ["" for i in range(numRows)]
+
+        i=0
+        multiplier = 1
+
+        for char in s:
+            buckets[i] += char
+
+            i += 1 * multiplier
+            if i==numRows:
+                i -= 2
+                multiplier = -1
+
+            if i == -1:
+                i += 2
+                multiplier = 1
+
+        resultString = ""
+        for string in buckets:
+            resultString += string
+
+        return resultString

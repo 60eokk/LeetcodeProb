@@ -55,7 +55,7 @@ class Solution:
         
 
 
-# 4
+# 5
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         if len(s) <=1:
@@ -71,3 +71,9 @@ class Solution:
                     max_str = s[i:j+1]
         
         return max_str
+    
+
+# 6
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        

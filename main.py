@@ -126,3 +126,9 @@ class Solution:
             return 0
         else:
             return reverse
+        
+
+# Q 8
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        

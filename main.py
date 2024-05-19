@@ -150,7 +150,8 @@ class Solution:
             ans *= sign
         else:
             return 0
-
+        # LINE148-152 IS IMPORTANT: DO NOT CONVERT RESULT TO ANS FIRST. BECAUSE YOU GOTTA CHECK WHETHER RESULT IS EMPTY OR NOT!!
+        # IF RESULT WAS EMPTY AND I COVERTED ans = int(result), it would have returned error
 
         if ans <= -2**31:
             ans = -2**31

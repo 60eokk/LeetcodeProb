@@ -130,5 +130,32 @@ class Solution:
 
 # Q 8
 class Solution:
-    def myAtoi(self, s: str) -> int:
-        
+    def myAtoi(self, s:str) -> int:
+        n = len(s)
+        i=0
+        result = ""
+        sign=1
+
+        while i<n and s[i] == " ":
+            i += 1
+        if i<n and (s[i] == "-" or s[i] == "+"):
+            sign = -1 if s[i] == "-" else 1
+            i += 1
+        while i<n and s[i].isdigit():
+            result += s[i]
+            i += 1
+
+        if result:
+            ans = int(result)
+            ans *= sign
+        else:
+            return 0
+
+
+        if ans <= -2**31:
+            ans = -2**31
+        elif ans >= 2**31 - 1:
+            ans = 2**31 - 1
+
+        return ans
+

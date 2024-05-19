@@ -102,3 +102,27 @@ class Solution:
             resultString += string
 
         return resultString
+    
+
+
+# 7
+class Solution:
+    def reverse(self, x: int) -> int:
+        INTMAX = 2**31 - 1
+        INTMIN = -2**31
+
+        if x < 0:
+            sign = -1
+        else:
+            sign = 1
+
+        x = x * sign
+
+        reverse = int(str(x)[::-1])
+
+        reverse = reverse * sign
+
+        if reverse < INTMIN or reverse > INTMAX:
+            return 0
+        else:
+            return reverse

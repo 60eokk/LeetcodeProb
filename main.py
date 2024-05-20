@@ -226,9 +226,25 @@ lambda x,y,z: x*y*z
 # lambda is often used with map
 L = [2,3,4,5]
 m = map(lambda x: x**3, L) 
+# map(lambda x: A, B)  --> A is output, B is the variable
 
 F = filter(lambda x: x <=4, L)
 print(list(F)) # output: [2,3,4]
 
 c = map(lambda x: x**3, filter(lambda x: x<=4, L)) # nested version of above 2
 print(list(c))
+
+
+# replace function
+txt = "ABBBC"
+x = txt.replace("BB", "XX")
+print(x) # output: AXXBC (meaning it checks from left to right in order)
+
+# GOING BACK TO Q13
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman_to_integer = {
+            'I': 1,'V': 5, 'X': 10, 'L': 50,'C': 100,'D': 500,'M': 1000,
+        }
+        s = s.replace("IV", "IIII").replace("IX", "VIIII").replace("XL", "XXXX").replace("XC", "LXXXX").replace("CD", "CCCC").replace("CM", "DCCCC")
+        return sum(map(lambda x: roman_to_integer[x], s)) 

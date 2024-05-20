@@ -219,5 +219,16 @@ class Solution:
 # lambda functions: can be used for calculus function, create function anonymously
 def f(x):
     return x**2
-
 f = lambda x: x**2 # they are the same
+
+lambda x,y,z: x*y*z
+
+# lambda is often used with map
+L = [2,3,4,5]
+m = map(lambda x: x**3, L) 
+
+F = filter(lambda x: x <=4, L)
+print(list(F)) # output: [2,3,4]
+
+c = map(lambda x: x**3, filter(lambda x: x<=4, L)) # nested version of above 2
+print(list(c))

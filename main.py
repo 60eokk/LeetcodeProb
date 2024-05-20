@@ -167,3 +167,7 @@ class Solution:
             return True
         for i in range(len(str(x))):
             return True if str(x) == str(x)[::-1] else False
+        
+
+# Q11
+# For efficiency, for loop inside for loop: O(n^2), a while loop is O(n). 

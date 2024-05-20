@@ -216,3 +216,8 @@ class Solution:
 
 
 # Q13
+# lambda functions: can be used for calculus function, create function anonymously
+def f(x):
+    return x**2
+
+f = lambda x: x**2 # they are the same

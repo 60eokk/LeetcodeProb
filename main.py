@@ -277,3 +277,9 @@ for i in range(10):
     if i % 2 == 0:
         continue  # Skip the rest of the loop for even numbers
     print(i)  # This line is only executed for odd numbers
+
+# break: exit loop entirely. once break is executed, the loop is terminated. exmaple below
+for i in range(10):
+    if i == 5:
+        break  # Exit the loop when i is 5
+    print(i)

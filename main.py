@@ -266,3 +266,14 @@ class Solution:
             ans += first[i]
             
         return ans
+    
+
+# Q15
+# continue and break are used to control the flows of loops
+# continue: skip the rest of the code inside a loop for the current iteration.
+# continue: is often used when a specific condition is met, and you want to skip the rest of the loop body without exiting the loop
+# example: will only output odd numbers
+for i in range(10):
+    if i % 2 == 0:
+        continue  # Skip the rest of the loop for even numbers
+    print(i)  # This line is only executed for odd numbers

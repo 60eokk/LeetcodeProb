@@ -248,3 +248,10 @@ class Solution:
         }
         s = s.replace("IV", "IIII").replace("IX", "VIIII").replace("XL", "XXXX").replace("XC", "LXXXX").replace("CD", "CCCC").replace("CM", "DCCCC")
         return sum(map(lambda x: roman_to_integer[x], s)) 
+    
+
+
+# Q14
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        

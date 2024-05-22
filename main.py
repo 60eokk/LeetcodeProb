@@ -252,6 +252,7 @@ class Solution:
 
 
 # Q14
+# putting them in sorted (ascending order) makes this question very easy to solve
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         strs = sorted(strs)

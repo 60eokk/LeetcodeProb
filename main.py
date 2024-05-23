@@ -310,3 +310,8 @@ class Solution:
                     while nums[j] == nums[j-1] and j<k:
                         j+=1
         return newList
+
+
+# Q16
+# float('inf) means positive infinity, while float('-inf') would be negative infinity
+# This question is basically making a "dummy" to compare with the abs(ans-target) and keep updating ans accordingly

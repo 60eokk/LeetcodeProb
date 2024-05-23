@@ -360,3 +360,6 @@ class Solution:
         return [] if solution == [""] else solution
     
 
+# Q18
+# vector: dynamic array mostly used in C++
+# THIS ONE IS HARD! TAKING A WHILE

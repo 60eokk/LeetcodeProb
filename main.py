@@ -339,3 +339,24 @@ class Solution:
                     return cur
             
         return ans
+
+
+# Q17
+# queue: FIFO (Handling tasks on printer, request on server, BFS in graph or tree algorithm)
+# deque (double ended queue): Will use when you need to add/pop/etc on front / rear of a list
+# Thus, deque is more frequently used over queue in lists
+## queue.pop() will delete and return the first element
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        phone = {
+            '2':['a','b','c'], '3':['d','e','f'], '4':['g','h','i'], '5':['j','k','l'], 
+                  '6':['m','n','o'], '7':['p','q','r','s'], '8':['t','u','v'], '9':['w','x','y','z']
+        }
+
+        solution = [""]
+
+        for i in digits:
+            solution = [x + y for x in solution for y in phone[i]]
+        return [] if solution == [""] else solution
+    
+

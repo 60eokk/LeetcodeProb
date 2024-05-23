@@ -315,3 +315,27 @@ class Solution:
 # Q16
 # float('inf) means positive infinity, while float('-inf') would be negative infinity
 # This question is basically making a "dummy" to compare with the abs(ans-target) and keep updating ans accordingly
+class Solution:
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        
+        n = len(nums)
+        nums.sort()
+        ans = float('inf')
+
+        for i in range(n):
+            left = i+1
+            right = n-1
+
+            while (left < right):
+                cur = nums[i] + nums[left] + nums[right]
+                if abs(cur-target) < abs(ans-target):
+                    ans = cur
+                
+                if cur < target:
+                    left += 1
+                elif cur > target:
+                    right -= 1
+                else:
+                    return cur
+            
+        return ans

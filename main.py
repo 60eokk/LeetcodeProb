@@ -408,5 +408,7 @@ class Solution:
             second = second.next
 
         second.next = second.next.next
+        # In singly linked list, when you want to delete a node, you don't "delete", but you would refer to the next node (exclude that node from the sequance)
 
         return dummy.next
+        # this does not only return the next node, but the whole list after dummy's next pointer which would be 1, thus 1235

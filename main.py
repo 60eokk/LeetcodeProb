@@ -382,3 +382,13 @@ class Solution:
                         k+=1
                   
         return ans
+    
+
+# Q19
+# ListNode: typically a class used an element (or node) within a singly linked list
+# Each node contains: Data(actual value stored inside node) + Next(pointer to next node)
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val  # The data value
+        self.next = next  # Reference to the next ListNode in the list
+        

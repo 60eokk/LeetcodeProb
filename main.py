@@ -412,3 +412,11 @@ class Solution:
 
         return dummy.next
         # this does not only return the next node, but the whole list after dummy's next pointer which would be 1, thus 1235
+
+
+#Q20
+class Solution:
+    def isValid(self, s: str) -> bool:
+        while '()' in s or '[]'in s or '{}' in s:
+            s = s.replace('()','').replace('[]','').replace('{}','')
+        return False if len(s) !=0 else True

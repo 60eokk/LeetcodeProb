@@ -435,3 +435,7 @@ class Solution:
         else: #2
             l2.next = self.mergeTwoLists(l1, l2.next)
             return l2
+        
+
+# Q22
+# Always think about "backtracking" in questions itself involves some kind of iteration

@@ -454,3 +454,7 @@ class Solution(object):
         Generate_Parentheses('',0,0)
         return l
 # it only adds a "right" only if the number of "left" is less than "right" --> which is the correct logic
+
+
+# Q24
+# Node questions are difficult! Do not think like a list. Should think as a "pointer"

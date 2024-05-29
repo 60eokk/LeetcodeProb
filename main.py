@@ -460,3 +460,26 @@ class Solution(object):
 # Node questions are difficult! Do not think like a list. Should think as a "pointer"
 # Think of "dummy" when dealing with nodes. 
 # Dummy is mostly used as a placeholder before the head of the list to handle edge cases smoothly
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def swapPairs(self, head:ListNode) -> ListNode:
+        dummy = ListNode(-1)
+        dummy.next = head
+        prev_node = dummy
+
+        while prev_node.next and prev_node.next.next:
+            node1 = prev_node.next
+            node2 = node1.next
+
+            prev_node.next = node2
+            node1.next = node2.next
+            node2.next = node1
+            
+            prev_node = node1
+
+        return dummy.next

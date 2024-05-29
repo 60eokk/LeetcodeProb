@@ -458,3 +458,5 @@ class Solution(object):
 
 # Q24
 # Node questions are difficult! Do not think like a list. Should think as a "pointer"
+# Think of "dummy" when dealing with nodes. 
+# Dummy is mostly used as a placeholder before the head of the list to handle edge cases smoothly

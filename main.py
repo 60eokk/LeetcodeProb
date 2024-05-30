@@ -497,3 +497,16 @@ class Solution:
                 count +=1
         return count
 # import part of this was thinking of nums[i] != nums[i-1]. it is not always i+1
+
+
+# Q27
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        nums = nums.sort
+
+        count =0
+        for i in range(len(nums)-1):
+            if nums[i] == val:
+                nums[i] = nums[count]
+                count +=1
+        return count

@@ -488,4 +488,12 @@ class Solution:
 # Q26
 # remove duplicates "in-place": means removing duplicates without requiring extra space proportional to input size
 # this means that it modifies the input in place without creating a copy of it
-
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        count = 1
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i-1]:
+                nums[count] = nums[i]
+                count +=1
+        return count
+# import part of this was thinking of nums[i] != nums[i-1]. it is not always i+1

@@ -483,3 +483,9 @@ class Solution:
             prev_node = node1
 
         return dummy.next
+    
+
+# Q26
+# remove duplicates "in-place": means removing duplicates without requiring extra space proportional to input size
+# this means that it modifies the input in place without creating a copy of it
+

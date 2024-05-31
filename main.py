@@ -511,6 +511,7 @@ class Solution:
         return count
 
 # Q28
+# think about "slicing"
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         for i in range(len(haystack)):

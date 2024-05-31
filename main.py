@@ -518,3 +518,16 @@ class Solution:
             if haystack[i:i+len(needle)] == needle:
                 return i
         return -1
+    
+
+# 29
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        dividend = abs(dividend)
+        divisor = abs(divisor)
+        count = 0
+        temp = float('inf')
+        while temp > divisor:
+            temp = dividend - divisor
+            count += 1
+        return count

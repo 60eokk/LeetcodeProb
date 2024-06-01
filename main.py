@@ -535,3 +535,8 @@ class Solution:
         return result
 # encountered a lot of time limit exceeded errors. 
 # managed to solve by thinking of another algorihtm and keeping the min and max nums
+
+
+# Q31
+# tricky part about this was that the function did not return anything
+# instead, change the nums itself, without using any extra spaces

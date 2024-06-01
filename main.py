@@ -560,3 +560,13 @@ class Solution:
 
             nums[i], nums[pos] = nums[pos], nums[i]
             nums[i+1:] = sorted(nums[i+1:])
+
+
+# Q33
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        for i in range(len(nums)):
+            if nums[i] == target:
+                return i
+        else:
+            return -1

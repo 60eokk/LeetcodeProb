@@ -622,3 +622,47 @@ class Solution:
         left = self.binarySearch(nums, target, 0)
         right = self.binarySearch(nums, target, 1)
         return [left, right]
+    
+# ANOTHER SOLUTION (EASIER TO COMPREHEND):
+class Solution:
+    def findFirst(self, nums, target):
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = left + (right - left) // 2
+            if nums[mid] < target:
+                left = mid + 1
+            elif nums[mid] > target:
+                right = mid - 1
+            else:
+                if mid == 0 or nums[mid - 1] != target:
+                    return mid
+                right = mid - 1
+        return -1
+
+    def findLast(self, nums, target):
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = left + (right - left) // 2
+            if nums[mid] < target:
+                left = mid + 1
+            elif nums[mid] > target:
+                right = mid - 1
+            else:
+                if mid == len(nums) - 1 or nums[mid + 1] != target:
+                    return mid
+                left = mid + 1
+        return -1
+
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        if not nums:
+            return [-1, -1]
+        
+        first = self.findFirst(nums, target)
+        if first == -1:
+            return [-1, -1]
+        last = self.findLast(nums, target)
+        
+        return [first, last]
+    
+
+# Q35

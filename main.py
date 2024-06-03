@@ -670,7 +670,7 @@ class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
         left, right = 0, len(nums)-1
        
-        while left < right:
+        while left <= right:
             mid = (left + right) // 2
             if nums[mid] == target:
                 return mid
@@ -679,5 +679,7 @@ class Solution:
             else:
                 right = mid - 1
             
-        return left
+        return 0
 # above is the solution without the condition of "If not, return the index where it would be if it were inserted in order."
+# below is the full solution
+# Just have to change return 0 --> return left (the insertion point)

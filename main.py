@@ -596,3 +596,6 @@ class Solution:
                 else:
                     right =mid-1
         return -1
+    
+# Q34
+# Question is again asking to solve in O(logn) --> think of binary search

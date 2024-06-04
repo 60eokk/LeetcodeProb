@@ -683,3 +683,6 @@ class Solution:
 # above is the solution without the condition of "If not, return the index where it would be if it were inserted in order."
 # below is the full solution
 # Just have to change return 0 --> return left (the insertion point)
+
+# Q36
+# set() will remove duplicates

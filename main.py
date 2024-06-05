@@ -723,3 +723,24 @@ class Solution:
         result.append(str(count) + s[-1])
 
         return ''.join(result)
+    
+
+# break, continue
+# "break" will INSTANTLY EXIT the loop
+# "continue" will SKIP and move onto NEXT loop
+numbers = [1, 2, 3, 4, 5, -1, 7, 8]
+for number in numbers:
+    if number == -1:
+        print("Skipping negative number:", number)
+        continue  # Skip this iteration
+    print("Processing number:", number)
+
+# above will output the following: so if i dont want it to exit and keep going inside the loop i will use "continue"
+#Processing number: 1
+#Processing number: 2
+#Processing number: 3
+#Processing number: 4
+#Processing number: 5
+#Skipping negative number: -1
+#Processing number: 7
+#Processing number: 8

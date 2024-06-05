@@ -701,3 +701,25 @@ class Solution:
 # Run-length encoding: form of lossless data compression in which runs of data (consecutive occurrences of the same data value) 
 # are stored as a single occurrence of that data value and a count of its consecutive occurrences, rather than as the original run
 # green green green would be green x3
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        if n==1:
+            return "1"
+        previous = self.countAndSay(n-1)
+
+        return self.generateNext(previous)
+
+    def generateNext(self,s):
+        result = []
+        count = 1
+        
+        for i in range(1,len(s)):
+            if s[i] ==s[i-1]:
+                count+=1
+            else:
+                result.append(str(count) + s[i-1])
+                count=1
+
+        result.append(str(count) + s[-1])
+
+        return ''.join(result)

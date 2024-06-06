@@ -773,3 +773,24 @@ class Solution:
         return res
     
 # DFS Solution below:
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        def dfs(start, path, remaining):
+            if remaining == 0:
+                # Found a combination whose sum is target
+                results.append(list(path))
+                return
+            if remaining < 0:
+                # Exceeded the sum, no need to proceed further
+                return
+
+            for i in range(start, len(candidates)):
+                # Include the current number and move deeper into the DFS
+                path.append(candidates[i])
+                dfs(i, path, remaining - candidates[i])
+                # Backtrack: remove the last added number and try the next possible number
+                path.pop()
+
+        results = []
+        dfs(0, [], target)
+        return results

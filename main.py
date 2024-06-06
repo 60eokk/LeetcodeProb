@@ -794,3 +794,28 @@ class Solution:
         results = []
         dfs(0, [], target)
         return results
+    
+# Q40
+# utilizing previous question + contineu/break
+class Solution:
+    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        candidates.sort()  # Sort candidates to help skip duplicates
+        results = []
+
+        def backtrack(comb, remaining, start):
+            if remaining == 0:
+                results.append(list(comb))  # Found a valid combination
+                return
+            for i in range(start, len(candidates)):
+                # Skip duplicates
+                if i > start and candidates[i] == candidates[i - 1]:
+                    continue
+                if remaining - candidates[i] < 0:
+                    break  # No need to continue if the remaining sum becomes negative
+                # Include the candidate and move to the next
+                comb.append(candidates[i])
+                backtrack(comb, remaining - candidates[i], i + 1)  # Move to the next index
+                comb.pop()  # Backtrack
+
+        backtrack([], target, 0)
+        return results

@@ -744,3 +744,10 @@ for number in numbers:
 #Skipping negative number: -1
 #Processing number: 7
 #Processing number: 8
+
+
+# Q39
+# Backtrack: technique for solving recursively by trying to build a solution incrementally
+# DFS: Depth firth Search: explores possible vertices (from a given starting point) down each branch before backtracking
+# This property of DFS allows algorithm to dive deep into a tree/graph using one path first, then it backtracks and explores next path
+# Backtrack solution below

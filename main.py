@@ -828,8 +828,10 @@ class Solution:
         if num1 == '0' or num2 == '0':
             return '0'
 
+        # this is the maximum length of the number that can be created
         res = [0] * (len(num1) + len(num2))
 
+        # go backwards
         for i in range(len(num1) - 1, -1, -1):
             for j in range(len(num2) - 1, -1, -1):
                 res[i + j + 1] += int(num1[i]) * int(num2[j])

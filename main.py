@@ -751,3 +751,25 @@ for number in numbers:
 # DFS: Depth firth Search: explores possible vertices (from a given starting point) down each branch before backtracking
 # This property of DFS allows algorithm to dive deep into a tree/graph using one path first, then it backtracks and explores next path
 # Backtrack solution below
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        def backtrack(start, comb, target):
+            if target ==0: # current combination comb is a valid solution
+                res.append(list(comb))
+                return
+            if target<0: # means we exceeded target sum with current combination
+                return
+
+            # iterate over candidates starting from 'start' index 
+            for i in range(start, len(candidates)):
+                comb.append(candidates[i])
+                # pass i as start again because we can use duplicates
+                backtrack(i,comb,target-candidates[i])
+                comb.pop()
+
+        res = []
+
+        backtrack(0,[], target)
+        return res
+    
+# DFS Solution below:

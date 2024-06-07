@@ -848,3 +848,16 @@ class Solution:
 
 # Q45
 # Greedy algoritm: "making optimal choices for each step"
+class Solution:
+    def jump(self, nums: List[int]) -> int:
+        current, farthest, count = 0,0,0
+
+        for i in range(len(nums)-1):
+            farthest = max(farthest, i+nums[i])
+            
+            if i==current:
+                current = farthest
+                count+=1
+                if current >= len(nums)-1:
+                    break
+        return count

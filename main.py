@@ -844,3 +844,7 @@ class Solution:
             i += 1
 
         return "".join(map(str,res[i:]))
+    
+
+# Q45
+# Greedy algoritm: "making optimal choices for each step"

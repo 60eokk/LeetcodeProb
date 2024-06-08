@@ -867,3 +867,23 @@ class Solution:
 # Permutation: every possible lists of a list
 # ex: Input: nums = [1,2,3]        Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 # Backtracking: a recursive method that constructs solutions incrementally, abandoning any path as soon as it does not lead to solution
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        def backtrack(current_permutation, used):
+            # If the current permutation is complete
+            if len(current_permutation) == len(nums):
+                results.append(current_permutation[:])  # Append a copy of the current permutation
+                return
+            
+            # Try to use each number as the next perm element
+            for i in range(len(nums)):
+                if not used[i]:  # If this element has not been used
+                    used[i] = True
+                    current_permutation.append(nums[i])
+                    backtrack(current_permutation, used)
+                    current_permutation.pop()  # Remove the element added last
+                    used[i] = False  # Mark this element as not used
+        
+        results = []
+        backtrack([], [False] * len(nums))  # Initialize used-array with False
+        return results

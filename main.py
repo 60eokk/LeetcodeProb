@@ -861,3 +861,8 @@ class Solution:
                 if current >= len(nums)-1:
                     break
         return count
+    
+
+# Q46
+# Permutation: every possible lists of a list
+# ex: Input: nums = [1,2,3]        Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]

@@ -866,3 +866,4 @@ class Solution:
 # Q46
 # Permutation: every possible lists of a list
 # ex: Input: nums = [1,2,3]        Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+# Backtracking: a recursive method that constructs solutions incrementally, abandoning any path as soon as it does not lead to solution

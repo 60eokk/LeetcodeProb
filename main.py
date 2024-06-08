@@ -887,3 +887,30 @@ class Solution:
         results = []
         backtrack([], [False] * len(nums))  # Initialize used-array with False
         return results
+    
+
+# Q47
+class Solution:
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()  # Sort the numbers to handle duplicates easily
+        results = []  # This will store all unique permutations
+        
+        def backtrack(current_permutation, used):
+            if len(current_permutation) == len(nums):
+                results.append(current_permutation[:])  # Append a copy of the current permutation
+                return
+            
+            for i in range(len(nums)):
+                if not used[i]:  # Ensure this element hasn't been used in the current permutation
+                    # Skip the element if it's the same as the one before it and the previous one wasn't used
+                    if i > 0 and nums[i] == nums[i - 1] and not used[i - 1]:
+                        continue
+                    
+                    used[i] = True
+                    current_permutation.append(nums[i])
+                    backtrack(current_permutation, used)
+                    current_permutation.pop()  # Backtrack by removing the last element
+                    used[i] = False  # Mark this element as not used
+
+        backtrack([], [False] * len(nums))  # Initialize the used array with False
+        return results

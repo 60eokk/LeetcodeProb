@@ -935,3 +935,8 @@ class Solution:
         for i in range(len(matrix)):
             for j in range(i):
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+
+# Q49
+# Anagram: "word formed by rearranging the letters of a different word
+# typically using all the original letters exactly once"

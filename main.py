@@ -973,3 +973,22 @@ class Solution:
         
         return x
 # above is correct, but BAD TIME COMPLEXITY
+# Thus, better way to solve is to divide into "HALVES"
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        if n == 0:
+            return 1  # Any number to the power of 0 is 1.
+        elif n < 0:
+            x = 1 / x  # Handle negative powers by taking the reciprocal.
+            n = -n
+
+        def helper(x, n):
+            if n == 1:
+                return x
+            half = helper(x, n // 2)
+            if n % 2 == 0:
+                return half * half
+            else:
+                return half * half * x
+
+        return helper(x, n)

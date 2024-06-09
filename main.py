@@ -953,3 +953,23 @@ class Solution:
             sortedtable[sortedstr].append(string)
 
         return list(sortedtable.values())
+    
+
+# Q50
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        if n==0:
+            return 1
+        elif n > 0:
+            orig = x
+            for _ in range(n-1):
+                x *= orig
+        else:
+            orig = x
+            for _ in range(-n-1):
+                x *= orig
+            x = 1/x
+
+        
+        return x
+# above is correct, but BAD TIME COMPLEXITY

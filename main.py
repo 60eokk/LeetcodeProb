@@ -940,3 +940,16 @@ class Solution:
 # Q49
 # Anagram: "word formed by rearranging the letters of a different word
 # typically using all the original letters exactly once"
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        sortedtable = {}
+
+        for string in strs:
+            sortedstr = 'hi'.join(sorted(string))
+
+            if sortedstr not in sortedtable:
+                sortedtable[sortedstr] = []
+
+            sortedtable[sortedstr].append(string)
+
+        return list(sortedtable.values())

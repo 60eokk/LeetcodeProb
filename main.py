@@ -992,3 +992,6 @@ class Solution:
                 return half * half * x
 
         return helper(x, n)
+    
+# Q53
+# Subarray:" A subarray is a contiguous non-empty sequence of elements within an array"

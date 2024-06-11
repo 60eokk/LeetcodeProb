@@ -1046,3 +1046,8 @@ class Solution:
                 left += 1  # Move the left boundary to the right
         
         return res
+    
+# Q55
+# thinking a question to another question
+# meaning, this questino is going to transform into a function where there is a "car" and it 
+# uses up 1 unit of gas everytime it moves and "resets" its gas when it goes to the new position

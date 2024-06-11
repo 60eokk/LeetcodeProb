@@ -1051,3 +1051,13 @@ class Solution:
 # thinking a question to another question
 # meaning, this questino is going to transform into a function where there is a "car" and it 
 # uses up 1 unit of gas everytime it moves and "resets" its gas when it goes to the new position
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        gas = 0
+        for n in nums:
+            if gas<0:
+                return False
+            elif n > gas:
+                gas = n
+            gas -= 1
+        return True

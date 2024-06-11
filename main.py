@@ -1061,3 +1061,7 @@ class Solution:
                 gas = n
             gas -= 1
         return True
+    
+
+# Q56
+# lamda function is in this format --> lambda arguments: expression

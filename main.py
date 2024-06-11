@@ -1008,3 +1008,7 @@ class Solution:
                 globalmax = currentmax
 
         return globalmax
+    
+#Q54 
+# Wondering where can spiral maxtrix queestiones be used for?
+# they can be used in animations, data visualization, games

@@ -996,3 +996,15 @@ class Solution:
 # Q53
 # Subarray:" A subarray is a contiguous non-empty sequence of elements within an array"
 # Think this could be used for..??
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        currentmax = globalmax = nums[0]
+        for i in range(1,len(nums)):
+            currentmax = max(nums[i], currentmax + nums[i])
+
+            if currentmax > globalmax:
+                globalmax = currentmax
+
+        return globalmax

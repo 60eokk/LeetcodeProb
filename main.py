@@ -1079,3 +1079,8 @@ class Solution:
                 merged.append(intervals[i])
 
         return merged
+
+
+# Q57
+# By searching for YouTube videos of leetcode solutions, I have realized the importance of "hashsets", 
+# and "binary search". This prob focuses on binary search as it hints.

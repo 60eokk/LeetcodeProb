@@ -1129,3 +1129,39 @@ class Solution:
         wordlist = s.split()
         if wordlist:
             return len(wordlist[-1])
+        
+# Q59 
+# anoter spiral matrix problem (conceptually easy to understand with 4 pointers)
+class Solution:
+    def generateMatrix(self, n: int) -> List[List[int]]:
+        matrix = [[0]*n for _ in range(n)] # easy list comprehension to make 2d matrix
+        left, right = 0, n-1
+        top, bottom = 0, n-1
+        val = 1
+
+        while left <= right:
+            # fill every val in top row
+            for col in range(left, right+1):
+                matrix[top][col] = val
+                val+=1
+            top += 1
+
+            # fill every val in right col
+            for row in range(top, bottom+1):
+                matrix[row][right] = val
+                val += 1
+            right -= 1
+
+            # fill every val in bottom row (reverse order)
+            for col in range(right, left-1, -1):
+                matrix[bottom][col] = val
+                val += 1
+            bottom -= 1
+
+            # fill every val in left col (reverse order)
+            for row in range(bottom, top-1, -1):
+                matrix[row][left] = val
+                val += 1
+            left += 1
+
+        return matrix

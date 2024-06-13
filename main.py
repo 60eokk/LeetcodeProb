@@ -1122,3 +1122,10 @@ class Solution:
             i += 1
 
         return result
+    
+# Q58
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        wordlist = s.split()
+        if wordlist:
+            return len(wordlist[-1])

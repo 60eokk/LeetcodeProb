@@ -1084,3 +1084,41 @@ class Solution:
 # Q57
 # By searching for YouTube videos of leetcode solutions, I have realized the importance of "hashsets", 
 # and "binary search". This prob focuses on binary search as it hints.
+# Binary search allows complexity reduction from O(n) to O(logn)
+class Solution:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        result = []
+        n = len(intervals)
+        i = 0
+        
+        # Use binary search to find the correct insertion point
+        low, high = 0, n - 1
+        while low <= high:
+            mid = (low + high) // 2
+            if intervals[mid][0] < newInterval[0]:
+                low = mid + 1
+            else:
+                high = mid - 1
+        
+        # Now 'low' is the correct index to consider for insertion
+        # Add all intervals before 'newInterval'
+        while i < low:
+            result.append(intervals[i])
+            i += 1
+        
+        # Merge 'newInterval' with intervals in 'result' if it overlaps
+        if not result or result[-1][1] < newInterval[0]:
+            result.append(newInterval)
+        else:
+            result[-1][1] = max(result[-1][1], newInterval[1])
+        
+        # Process the rest of the intervals
+        while i < n:
+            interval = intervals[i]
+            if result[-1][1] < interval[0]:
+                result.append(interval)
+            else:
+                result[-1][1] = max(result[-1][1], interval[1])
+            i += 1
+
+        return result

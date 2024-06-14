@@ -1165,3 +1165,9 @@ class Solution:
             left += 1
 
         return matrix
+    
+
+# Q61
+# linked list prob again --> thought process of this q: 
+# count backwards k and that is where we want to start. Thus, when looking backwards, the last pointer 
+# before should point to NULL and tail (original last pointer) should point back to beginning

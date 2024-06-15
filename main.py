@@ -1197,3 +1197,13 @@ class Solution:
         cur.next = None
         tail.next = head
         return newHead
+
+
+# Q62
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        if m==1 or n==1:
+            return 1
+        else:
+            return int(factorial(m+n-2)/(factorial(n-1)*factorial(m-1)))
+# solve by using math

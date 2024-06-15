@@ -1207,3 +1207,24 @@ class Solution:
         else:
             return int(factorial(m+n-2)/(factorial(n-1)*factorial(m-1)))
 # solve by using math
+
+
+# Q63
+# same question with Q62 with an obstacle
+# Solve by using brute force OR dynamic programming
+# First solution is using dfs
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+        M, N = len(obstacleGrid), len(obstacleGrid[0])
+        dp = {(M-1, N-1): 1}
+
+        def dfs(r,c):
+            if r==M or c==N or grid[r][c]:
+                return 0
+            if (r,c) in dp:
+                return dp[(r,c)]
+            dp[(r,c)] = dfs(r+1,c) + dfs(r,c+1)
+            return dp[(r,c)]
+        
+        return dfs(0,0)
+    

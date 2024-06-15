@@ -1212,7 +1212,7 @@ class Solution:
 # Q63
 # same question with Q62 with an obstacle
 # Solve by using brute force OR dynamic programming
-# First solution is using dfs
+# First solution is using dfs (HASHMAP)
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         M, N = len(obstacleGrid), len(obstacleGrid[0])
@@ -1227,4 +1227,22 @@ class Solution:
             return dp[(r,c)]
         
         return dfs(0,0)
-    
+
+# Second solution uses dynamic programming (= adding up numbers from bottom right to top left)
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+        M, N = len(obstacleGrid), len(obstacleGrid[0])
+        dp = [0] * N
+        dp[N-1] = 1
+
+        for r in reversed(range(M)):
+            for c in reversed(range(N)):
+                if obstacleGrid[r][c]:
+                    dp[c] = 0
+                elif c+1 < N:
+                    dp[c] = dp[c] + dp[c+1]
+                else:
+                    dp[c] = dp[c] + 0
+        
+        return dp[0]
+

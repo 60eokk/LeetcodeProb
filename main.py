@@ -1347,3 +1347,18 @@ def fib_memo(n, D = {}):
             out = fib_memo(n-1) + fib_memo(n-2)
             D[n] = out
         return out
+# Solution for Q70
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        memo = [-1] * (n + 1)
+        
+        def climb(i):
+            if i <= 1:
+                return 1
+            if memo[i] != -1:
+                return memo[i]
+            memo[i] = climb(i - 1) + climb(i - 2)
+            return memo[i]
+
+        return climb(n)
+        

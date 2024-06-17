@@ -1263,3 +1263,8 @@ class Solution:
                 else:
                     grid[i][j]+=min(grid[i-1][j],grid[i][j-1])
         return grid[n-1][m-1]
+    
+# Starting to realize that every problem, whether it be leetcode or any other problem
+# is very dependent on HOW I look at the problem and solve it
+# You can solve it anyway. But need to rethink to use the best, most efficient way
+

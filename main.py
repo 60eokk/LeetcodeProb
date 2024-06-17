@@ -1268,3 +1268,16 @@ class Solution:
 # is very dependent on HOW I look at the problem and solve it
 # You can solve it anyway. But need to rethink to use the best, most efficient way
 
+# Q66
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        if digits[-1] != 9:
+            digits[-1] += 1
+            return digits
+        elif len(digits)==1 and digits[0] == 9:
+            return [1,0]
+        else: 
+            digits[-1]=0
+            digits[0:-1] = self.plusOne(digits[0:-1])
+            return digits
+# recursive method

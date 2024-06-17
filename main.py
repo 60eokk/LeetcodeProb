@@ -1317,3 +1317,33 @@ class Solution:
                 right = mid-1
         return right
 # easy binary search prob
+
+
+# Q70
+# dynamic programming is very much related to memoization (faster)
+# Example of recursive VS memoization
+# The simple way to define them recursively in Sage is as follows:
+def fib(n):
+    # Base Cases n = 0 or n = 1
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    # Recursive step
+    return fib(n - 1) + fib(n - 2)
+
+def fib_memo(n, D = {}):
+    # Check if its already in the dictionary:
+    if n in D:
+        return D[n]
+    else:
+        # Base cases
+        if n == 0:
+            out = 0
+        elif n == 1:
+            out = 1
+        else:
+            # Recursive step with memoization
+            out = fib_memo(n-1) + fib_memo(n-2)
+            D[n] = out
+        return out

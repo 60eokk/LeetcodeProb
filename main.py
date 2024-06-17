@@ -1281,3 +1281,23 @@ class Solution:
             digits[0:-1] = self.plusOne(digits[0:-1])
             return digits
 # recursive method
+
+
+# Q67
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        a,b = a[::-1], b[::-1]
+        res = []
+        carry = 0
+
+        for i in range(max(len(a), len(b))):
+            x= int(a[i]) if i <len(a) else 0 # good way for "if index out of range, treat as 0"
+            y= int(b[i]) if i <len(b) else 0
+            total = x+y+carry
+
+            carry = total//2
+            res.append(total%2)
+        
+        if carry:
+            res.append(carry)
+        return ''.join(str(x) for x in res[::-1])

@@ -1362,3 +1362,16 @@ class Solution:
 
         return climb(n)
         
+
+# Queue, Deque
+# It is more efficient to import "deque" instead of popping from the front because
+# that would actually be O(n), not O(1).
+# Thus it is more efficient to import deque like below
+from collections import deque
+people = ['Mario', 'Luigi', 'Toad']
+queue = deque(people)
+queue.append('Bowser') # this will append Bowser to the end
+queue.popleft # this will pop Mario with O(1)
+queue.appendleft('Daisy')
+queue.rotate(-2) # This will move everyone to the left 2 positions
+queue.reverse() # This will reverse: meaning right to left

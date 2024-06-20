@@ -1375,3 +1375,23 @@ queue.popleft # this will pop Mario with O(1)
 queue.appendleft('Daisy')
 queue.rotate(-2) # This will move everyone to the left 2 positions
 queue.reverse() # This will reverse: meaning right to left
+
+
+# Q71
+# Perfect prob to use Stack
+class Solution:
+    def simplifyPath(self, path: str) -> str:
+        stack = []
+        cur = ""
+
+        for c in path + "/":
+            if c=="/":
+                if cur == "..":
+                    if stack: # if stack is not empty
+                        stack.pop()
+                elif cur != "" and cur != ".":
+                    stack.append(cur)
+                cur = ""
+            else:
+                cur += c
+        return "/" + "/".join(stack)

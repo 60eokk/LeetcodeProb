@@ -1395,3 +1395,7 @@ class Solution:
             else:
                 cur += c
         return "/" + "/".join(stack)
+
+# Q72
+# 2d dynamic programming prob
+# thought: think of all ways letters can function(add, delete, replace)

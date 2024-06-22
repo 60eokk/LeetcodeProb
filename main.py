@@ -1419,3 +1419,8 @@ class Solution:
                     cache[i][j] = 1 + min(cache[i + 1][j], cache[i][j + 1], cache[i + 1][j + 1])
 
         return cache[0][0]
+
+
+# Q73
+# This prob is importatnt to make a COPY
+# If not, it will keep replacing 0 everywhere because it will keep updating

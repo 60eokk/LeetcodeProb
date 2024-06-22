@@ -1452,3 +1452,7 @@ class Solution:
         if rowZero:
             for c in range(COLS):
                 matrix[0][c] = 0
+
+
+# Q74
+# Questions makes us solve in O(logm*n). When I see log--? I think of binary

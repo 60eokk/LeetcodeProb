@@ -1513,3 +1513,21 @@ class Solution:
         # Fill the array with 2s for the remaining positions
         for i in range(zeros + ones, n):
             nums[i] = 2
+
+# Q77
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        res = []
+
+        def backtrack(start, comb):
+            if len(comb)==k:
+                res.append(comb.copy()) # copy is used so numbers aren't duplictaed
+                return
+            
+            for i in range(start, n+1):
+                comb.append(i)
+                backtrack(i+1, comb)
+                comb.pop()
+
+        backtrack(1, [])
+        return res

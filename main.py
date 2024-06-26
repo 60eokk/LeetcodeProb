@@ -1578,3 +1578,4 @@ class Solution:
                 if dfs(r,c,0): return True
 
         return False
+# sometimes like this solution above, the most efficient way to solve aproblem might be brute force

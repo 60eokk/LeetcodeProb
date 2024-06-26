@@ -1579,3 +1579,8 @@ class Solution:
 
         return False
 # sometimes like this solution above, the most efficient way to solve aproblem might be brute force
+
+# Q80
+# The problem has a constraint of "You must do this by modifying the input array in-place with O(1) extra memory"
+# This makes us solve this problem with "two pointer"
+# 1 pointer for iterating thru array, 1 pointer to keep track of where to put next element

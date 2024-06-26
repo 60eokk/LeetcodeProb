@@ -1584,3 +1584,20 @@ class Solution:
 # The problem has a constraint of "You must do this by modifying the input array in-place with O(1) extra memory"
 # This makes us solve this problem with "two pointer"
 # 1 pointer for iterating thru array, 1 pointer to keep track of where to put next element
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if len(nums) < 3:
+            return len(nums)
+        
+        # Start writing from the third item
+        write_index = 2
+        
+        # Iterate over the array starting from the third element
+        for i in range(2, len(nums)):
+            # Only write the item to write_index if it's not a duplicate
+            # exceeding the allowed two occurrences
+            if nums[i] != nums[write_index - 2]:
+                nums[write_index] = nums[i]
+                write_index += 1
+        
+        return write_index

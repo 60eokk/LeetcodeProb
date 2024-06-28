@@ -1601,3 +1601,6 @@ class Solution:
                 write_index += 1
         
         return write_index
+
+# Q81
+# Another binary search problem. Which wil be solved l, r and //2, etc

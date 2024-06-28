@@ -1604,3 +1604,26 @@ class Solution:
 
 # Q81
 # Another binary search problem. Which wil be solved l, r and //2, etc
+# if nums[L] < nums[M] M(middle), then we are on left side, others, on right side
+# Originally thought of the above method, but BECAUSE there is duplicates, it cannot be solved that way
+class Solution:
+    def search(self, nums: List[int], target: int) -> bool:
+        l, r = 0, len(nums)-1
+        while l<=r:
+            m = l+ (r-l)//2
+            if nums[m]  == target:
+                return True
+            if nums[m] > nums[l]: # left portion
+                if nums[m] > target >= nums[l]:
+                    r= m-1
+                else:
+                    l = m+1
+            elif nums[m] < nums[l]: # right portion
+                if nums[m] < target <= nums[r]:
+                    l = m+1
+                else:
+                    r = m-1
+            else:
+                l += 1
+
+        return False

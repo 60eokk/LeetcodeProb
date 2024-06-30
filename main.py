@@ -1627,3 +1627,7 @@ class Solution:
                 l += 1
 
         return False
+
+# Q82
+# Logic for this prob would be to think of cur.next and cur.next.next (will they be the same?)
+# For these linked lists questions, always think of creating a dummy

@@ -1631,3 +1631,21 @@ class Solution:
 # Q82
 # Logic for this prob would be to think of cur.next and cur.next.next (will they be the same?)
 # For these linked lists questions, always think of creating a dummy
+class Solution:
+    def deleteDuplicates(self, head:ListNode) -> ListNode:
+        dummy = ListNode(0)
+        dummy.next = head
+
+        prev = dummy # will be used to connect non-duplicate nodes
+        current = head # explore the list
+
+        while current:
+            if current.next and current.val == current.next.val:
+                while current.next and current.val == current.next.val:
+                    current = current.next
+                prev.next = current.next # skip duplicates
+            else:
+                prev = current
+            current = current.next
+        
+        return dummy.next

@@ -1669,3 +1669,23 @@ class Solution:
                 current = current.next
 
         return head
+    
+
+# Q86
+# The way: create 2 sublists (one less than val, one bigger or equal to val)
+def partition(self, head, x):
+    left, right = ListNode(), ListNode()
+    ltail, rtail = left, right
+
+    while head:
+        if head.val < x:
+            ltail.next = head
+            ltail = ltail.next
+        else:
+            rtail.next = head
+            rtail = rtail.next
+        head.next = head
+
+    ltail.next = right.next # right only by itself is a dummy node, so right.next will point to actual first node
+    rtail.next = None
+    return left.next

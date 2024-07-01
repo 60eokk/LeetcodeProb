@@ -1649,3 +1649,12 @@ class Solution:
             current = current.next
         
         return dummy.next
+
+
+# Q83
+# Very similar from problem above
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+# practice writing the ListNode func

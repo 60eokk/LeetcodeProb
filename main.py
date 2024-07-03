@@ -1713,3 +1713,13 @@ class Solution:
             nums1[last] = nums2[n-1]
             n -=1
             last -=1
+
+
+# Q89
+# interesting question: feel like this would be another prob to think creatively
+class Solution:
+    def grayCode(self, n: int) -> List[int]:
+        
+        result = [i^(i//2) for i in range(pow(2,n))]
+
+        return result

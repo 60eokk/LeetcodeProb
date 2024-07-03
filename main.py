@@ -1723,3 +1723,19 @@ class Solution:
         result = [i^(i//2) for i in range(pow(2,n))]
 
         return result
+
+
+# Q90
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        nums.sort()
+
+        def dfs(index, path):
+            res.append(path)
+            for i in range(index, len(nums)):
+                if i > index and nums[i] == nums[i-1]:
+                    continue
+                dfs(i+1, path+[nums[i]])
+        dfs(0, [])
+        return res

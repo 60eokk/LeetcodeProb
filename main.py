@@ -1742,3 +1742,20 @@ class Solution:
     
 # Q91
 # A good way would be to divide into trees (doesn't have to be perfect tree), basically dividing into small sub probs
+class Solution:
+    # recursive caching solution
+    def numDecodings(self, s):
+        dp = { len(s) : 1}
+        def dfs(i):
+            if i in dp:
+                return dp[i]
+            if s[i] == "0":
+                return 0
+            
+            res = dfs(i+1)
+
+            if (i+1 < len(s) and (s[i] == "1" or (s[i] == "2" and s[i+1] in "0123456"))):
+                res += dfs(i+2)
+            dp[i] = res
+            return res
+        return dfs(0)

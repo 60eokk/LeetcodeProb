@@ -1739,3 +1739,6 @@ class Solution:
                 dfs(i+1, path+[nums[i]])
         dfs(0, [])
         return res
+    
+# Q91
+# A good way would be to divide into trees (doesn't have to be perfect tree), basically dividing into small sub probs

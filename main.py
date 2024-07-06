@@ -1789,3 +1789,30 @@ class Solution:
         leftPrev.next = prev        # prev is "right"
 
         return dummy.next
+    
+
+# Q93
+class Solution:
+    def resotreIPAddtresses(self, s):
+        res = [] # this is going to be appended
+        # valid: 0-255 inclusive, no leading zeros
+        # return list of valid IP
+        # another prob of thinking of "diving into subprobs like a tree"
+        if len(s) > 12:
+            return res
+        
+        def backtrack(i, dots, curIP): #index, current dots (total 4), currentIP
+            if dots == 4 and len(s):
+                res.append(curIP[:-1]) # remove the last dot, everything up until -1 index
+                return # return without anything this does not return anything and exits
+            if dots>4:
+                return
+            
+            for j in range(i, min(i+3, len(s))): # use min because i+3 might be out of range
+                if int(s[i:j+1]) < 256 and (i==j or s[i] != 0): # second condition is for "non-leading zeros"
+                    backtrack(j+1, dots+1, curIP+s[i:j+1] + ".")
+
+        backtrack(0,0,"")
+        return res
+    
+# Q94

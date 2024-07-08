@@ -1831,3 +1831,18 @@ class Solution:
         return res
     
 # but there is another sol: using Stack (iterative)
+class Solution:
+    def inorderTraversal2(self, root):
+        res = []
+        stack = []
+        cur = root
+
+        while cur or stack:
+            while cur:
+                stack.append(cur)
+                cur = cur.left
+            cur = stack.pop()
+            res.append(cur.val)
+            cur = cur.right
+        return res
+    

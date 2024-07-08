@@ -1829,3 +1829,5 @@ class Solution:
 
         inorder(root)
         return res
+    
+# but there is another sol: using Stack (iterative)

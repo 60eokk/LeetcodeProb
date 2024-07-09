@@ -1849,3 +1849,25 @@ class Solution:
 
 # Q95
 # Binary Search Tree: "All values greater has to go on the right side"
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
+        def generate(left, right):
+            if left==right:
+                return [TreeNode(left)] # wrap around an array
+            if left>right:
+                return [None] # put a NULL so it doesn't even not return anything
+            res = []
+            
+            for val in range(left, right+1):
+                for leftTree in generate(left, val-1):
+                    for rightTree in generate(val+1, right):
+                        root = TreeNode(val, leftTree, rightTree)
+                        res.append(root)
+            return res
+        return generate(1,n)

@@ -1846,3 +1846,6 @@ class Solution:
             cur = cur.right
         return res
     
+
+# Q95
+# Binary Search Tree: "All values greater has to go on the right side"

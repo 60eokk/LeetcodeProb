@@ -1871,3 +1871,19 @@ class Solution:
                         res.append(root)
             return res
         return generate(1,n)
+    
+
+# Q96
+# Trees again, which means this is most likely going to be solved by subprobs
+# Problem is only asking for a number, which means it is added up by multiplying up subprobs
+class Solution:
+    def numTrees(self, n):
+        numTree = [1] * (n+1)
+        for nodes in range(2, n+1):
+            total = 0
+            for root in range(1, nodes+1):
+                left = root-1
+                right = nodes-root
+                total += numTree[left] * numTree[right]
+            numTree[nodes] = total
+        return numTree[n]

@@ -1887,3 +1887,7 @@ class Solution:
                 total += numTree[left] * numTree[right]
             numTree[nodes] = total
         return numTree[n]
+
+# Q97
+# Divide into subprobs: first check whether it will start from s1 or s2
+# After that, it is another subprob of which string it will start from

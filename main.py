@@ -1908,3 +1908,7 @@ class Solution:
                     dp[i][j] = True
 
         return dp[0][0]
+    
+# Q98
+# The point of this problem is thinking which values to "compare", as we know that the node is between -inf, inf
+# When pointer goes down left, it will need to switch the upper bound to node.val, and when going right, it needs to switch lower bound to node.val

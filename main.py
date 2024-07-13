@@ -1932,3 +1932,6 @@ class Solution:
             helper(node.right, node.val, right))
 
         return helper(root, float("-inf"), float("inf"))
+    
+# Q99
+# The method is to keep track of the "nodes", instead of the "values" and in the end swap the value

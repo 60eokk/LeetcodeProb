@@ -2010,3 +2010,8 @@ class Solution:
             dfs(left.right, right.left))
 
         return dfs(root.left, root.right)
+    
+
+# Q102
+# Traverse level order: Breadst First Search!! (BFS)
+# Queue: First in First OUt (FIFO): Basically for this prob: Add by levels and then pop for each level from the queue

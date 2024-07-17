@@ -2044,3 +2044,7 @@ class Solution:
                 res.append(level)
 
         return res
+    
+# Q103
+# thought process: basically this prob is meant to return nodes of each level (zigzag order)
+# So for even number level: l -> r, odd number: r -> l

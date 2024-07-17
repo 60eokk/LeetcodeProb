@@ -2048,3 +2048,36 @@ class Solution:
 # Q103
 # thought process: basically this prob is meant to return nodes of each level (zigzag order)
 # So for even number level: l -> r, odd number: r -> l
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+
+        level = 0
+        res = []
+
+        if not root:
+            return []
+        
+        q = collections.deque([root])
+
+        while q:
+            level_nodes = []
+            for _ in range(len(q)):
+                curr = q.popleft()
+                if level % 2 == 0:
+                    level_nodes.append(curr.val)
+                else:
+                    level_nodes.insert(0,curr.val)
+                if curr.left:
+                    q.append(curr.left)
+                if curr.right:
+                    q.append(curr.right)
+            res.append(level_nodes)
+            level+=1
+        
+        return res

@@ -2095,3 +2095,8 @@ class Solution:
         if root == None: return 0
 
         return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+
+
+# Q105
+# Preorer: Nodes are visited in order (Root - Left - Right)
+# Inorder: Traverse left subtree inorder, then root, then right subtree inorder

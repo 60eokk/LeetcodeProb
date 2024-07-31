@@ -2118,3 +2118,29 @@ class Solution:
         root.right=self.buildTree(preorder[index+1:],inorder[index+1:])
         
         return root
+    
+# Q106
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
+        if not inorder or not postorder:
+            return None
+
+        # The last element in postorder is the root of the current tree
+        root_val = postorder.pop()
+        root = TreeNode(root_val)
+
+        # Find the index of the root value in the inorder array
+        inorder_index = inorder.index(root_val)
+
+        # Build the right subtree first, then the left subtree
+        # (This is because the postorder array is processed from the end)
+        root.right = self.buildTree(inorder[inorder_index+1:], postorder)
+        root.left = self.buildTree(inorder[:inorder_index], postorder)
+
+        return root

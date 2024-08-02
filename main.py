@@ -2178,3 +2178,7 @@ class Solution:
                 
         res.reverse()
         return res
+    
+# Q108
+# Height balanced subtree: Meaning depth of two subtrees of a node never differs > 1
+# This means that subtree depth cannot be 0 and 2

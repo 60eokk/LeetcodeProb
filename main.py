@@ -2144,3 +2144,37 @@ class Solution:
         root.left = self.buildTree(inorder[:inorder_index], postorder)
 
         return root
+    
+
+# Q107
+# Queue: Used in BFS ALOT (FIFO)
+# node is an instance of the TreeNode class, which contains more information than just its value. 
+# It includes attributes like val, left, and right. Thus in line XXX, we got to do node.val not node even if it is popped
+class TreeNode:
+    def __init__(self, val, left, right):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def levelOrderBottom(self, root):
+        res = []
+        if not root: return res
+
+        queue = [root]
+
+        while queue:
+            val_at_level = []
+
+            for _ in range(len(queue)):
+                node = queue.pop(0)
+                val_at_level.append(node.val)
+
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+
+            res.append(val_at_level)
+                
+        res.reverse()
+        return res

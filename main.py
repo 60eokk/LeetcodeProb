@@ -2182,3 +2182,24 @@ class Solution:
 # Q108
 # Height balanced subtree: Meaning depth of two subtrees of a node never differs > 1
 # This means that subtree depth cannot be 0 and 2
+class TreeNode:
+    def __init__(self, val, left, right):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def sortedArrayToBST(self, nums):
+        def convert(left, right):
+            # left, right = 0, len(nums)-1
+            if left>right: return None
+
+            middle = (left+right)//2
+
+            node = TreeNode(nums[middle])
+
+            node.left = convert(left, middle-1)
+            node.right = convert(middle+1, right)
+
+            return node
+        
+        return convert(0, len(nums)-1)

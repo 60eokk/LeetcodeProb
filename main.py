@@ -2250,3 +2250,23 @@ class Solution:
             return 1 + max(left_height, right_height)
         
         return check_height(root) != -1
+    
+
+# Q111
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if not root: return 0
+
+        left_depth = self.minDepth(root.left)
+        right_depth = self.minDepth(root.right)
+
+        if not left_depth and not right_depth: return 1
+
+        if not left_depth:
+            return right_depth + 1
+
+        if not right_depth:
+            return left_depth + 1
+
+        return min(left_depth, right_depth) + 1
+        

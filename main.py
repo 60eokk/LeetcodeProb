@@ -2235,4 +2235,18 @@ class Solution:
 # height balanced binary tree: depth of the two subtrees of every node never differs by more than one
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        return 0
+        def check_height(node):
+            if not node:
+                return 0
+            
+            left_height = check_height(node.left)
+            right_height = check_height(node.right)
+            
+            if left_height == -1 or right_height == -1:
+                return -1
+            if abs(left_height - right_height) > 1:
+                return -1
+
+            return 1 + max(left_height, right_height)
+        
+        return check_height(root) != -1

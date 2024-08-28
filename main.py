@@ -2230,3 +2230,9 @@ class Solution:
         if prev:
             prev.next = None
         return slow
+    
+# Q110
+# height balanced binary tree: depth of the two subtrees of every node never differs by more than one
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        return 0

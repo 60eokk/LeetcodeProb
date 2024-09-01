@@ -2368,3 +2368,14 @@ class Solution:
 # Dynamic Programming with O(n) Space Complexity
 # The method for this prob is to calculating from bottom to top to avoid repetition
 # If I'm at triangle[i][j], the min path sum is tri[i][j] + min(tri[i+1][j], tri[i+1][j+1])
+class Solution:
+    def minimumTotal(self, triangle: List[List[int]]) -> int:
+        # if not triangle(1): return triangle(0)
+
+        dp = triangle[-1]
+
+        for i in range(len(triangle)-2, -1, -1):
+            for j in range(len(triangle[i])):
+                dp[j] = triangle[i][j] + min(dp[j], dp[j+1])
+
+        return dp[0]

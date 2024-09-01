@@ -2363,3 +2363,8 @@ class Solution:
             row = new_row
         return row
         
+    
+# Q120
+# Dynamic Programming with O(n) Space Complexity
+# The method for this prob is to calculating from bottom to top to avoid repetition
+# If I'm at triangle[i][j], the min path sum is tri[i][j] + min(tri[i+1][j], tri[i+1][j+1])

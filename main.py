@@ -2379,3 +2379,16 @@ class Solution:
                 dp[j] = triangle[i][j] + min(dp[j], dp[j+1])
 
         return dp[0]
+
+
+# Q121
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        min_price = prices[0]
+        max_profit = 0
+        
+        for price in prices[1:]:
+            max_profit = max(max_profit, price - min_price)
+            min_price = min(min_price, price)
+            
+        return max_profit

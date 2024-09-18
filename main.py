@@ -2420,3 +2420,8 @@ class Solution:
             j -= 1
 
         return True
+
+
+# Q 128
+# must write algorithm in O(n): implies the solution should process the array in linear time 
+# sorting is usually O(nlogn), and also there cannot be nested manners

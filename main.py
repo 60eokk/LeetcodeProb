@@ -2425,3 +2425,21 @@ class Solution:
 # Q 128
 # must write algorithm in O(n): implies the solution should process the array in linear time 
 # sorting is usually O(nlogn), and also there cannot be nested manners
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        ordered = set(nums)
+        longest_streak = 0
+
+        for num in ordered:
+            if num-1 not in ordered:
+                current = num
+                streak = 1
+
+                while current + 1 in ordered:
+                    current += 1
+                    streak += 1
+                
+                longest_streak = max(longest_streak, streak)
+
+
+        return longest_streak

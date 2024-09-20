@@ -2469,3 +2469,44 @@ class Solution:
             return left_sum + right_sum
 
         return dfs(root, 0)
+
+
+# Q130
+
+        
+class Solution:
+    def solve(self, board: List[List[str]]) -> None:
+        if not board or not board[0]:
+            return
+        
+        rows, cols = len(board), len(board[0])
+        
+        def dfs(r, c):
+            # If out of bounds or current cell is not 'O', return
+            if r < 0 or c < 0 or r >= rows or c >= cols or board[r][c] != 'O':
+                return
+            
+            # Mark this cell as 'T' to indicate it's connected to the boundary
+            board[r][c] = 'T'
+            
+            # Explore the neighboring cells (up, down, left, right)
+            dfs(r+1, c)
+            dfs(r-1, c)
+            dfs(r, c+1)
+            dfs(r, c-1)
+        
+        # Step 1: Start DFS from the boundary 'O' cells
+        for r in range(rows):
+            for c in range(cols):
+                # Start from the first and last column for each row (boundary cells)
+                if r == 0 or r == rows - 1 or c == 0 or c == cols - 1:
+                    if board[r][c] == 'O':
+                        dfs(r, c)
+        
+        # Step 2: Flip all remaining 'O's to 'X', and turn 'T' back to 'O'
+        for r in range(rows):
+            for c in range(cols):
+                if board[r][c] == 'O':
+                    board[r][c] = 'X'  # These are surrounded regions
+                elif board[r][c] == 'T':
+                    board[r][c] = 'O'  # These are boundary-connected regions

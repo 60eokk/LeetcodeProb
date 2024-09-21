@@ -2514,3 +2514,31 @@ class Solution:
 
 # Q131
 # Palindrome question: use backtracking!
+class Solution:
+    def partition(self, s: str) -> List[List[str]]:
+
+
+    #### OR ANOTHER SOLUTION WOULD BE BELOW:
+        result = []
+
+        def backtrack(start, path):
+            # If we have reached the end of the string, append the current partition to the result
+            if start == len(s):
+                result.append(path[:])
+                return
+            
+            # Try to partition the string at every possible point
+            for end in range(start + 1, len(s) + 1):
+                current_substring = s[start:end]
+                # Check if the current substring is a palindrome
+                if current_substring == current_substring[::-1]:
+                    # If it is a palindrome, add it to the current path
+                    path.append(current_substring)
+                    # Recur for the remaining substring
+                    backtrack(end, path)
+                    # Backtrack and remove the last substring
+                    path.pop()
+
+        # Initial call to the backtracking function
+        backtrack(0, [])
+        return result

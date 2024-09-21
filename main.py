@@ -2510,3 +2510,7 @@ class Solution:
                     board[r][c] = 'X'  # These are surrounded regions
                 elif board[r][c] == 'T':
                     board[r][c] = 'O'  # These are boundary-connected regions
+
+
+# Q131
+# Palindrome question: use backtracking!

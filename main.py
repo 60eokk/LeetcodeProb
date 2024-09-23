@@ -2607,3 +2607,11 @@ class Solution:
 # --> O(n) time, O(1) space
  ## solve by using bitwise XOR due to complexity requirements
 # a ^ a = 0, a ^ b = 1, x ^ 0 = x
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        result = 0
+
+        for num in nums:
+            result = result ^ num
+
+        return result

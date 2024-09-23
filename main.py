@@ -2601,3 +2601,9 @@ class Solution:
                 starting_index = i + 1
         return starting_index
         
+
+# Q136
+# question asks for linear runtime complexity, only constant extra space
+# --> O(n) time, O(1) space
+ ## solve by using bitwise XOR due to complexity requirements
+# a ^ a = 0, a ^ b = 1, x ^ 0 = x

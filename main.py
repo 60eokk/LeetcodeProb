@@ -2619,3 +2619,9 @@ class Solution:
 # Q137
 from collections import Counter
 # above will significantly make things easier and improve time complexity
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        count = Counter(nums)  # Create a dictionary with counts of each number
+        for num, freq in count.items():
+            if freq == 1:  # Return the number that appears exactly once
+                return num
